@@ -1,5 +1,5 @@
 <template>
-    <main class="container-xxl">
+    <main class="container-xxl main-height">
         <router-link to="/reservation">
             <div class="nav-right-res-a">ЗАБРОНИРОВАТЬ СТОЛ</div>
         </router-link>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="head-p-2-3">
-            <p class="head-p-2">+7 (499) 841-67-29</p>
+            <p class="head-p-2">+7 (778) 841-67-29</p>
             <a class="head-p-3" href="#"><u>delivery@midas.rest</u></a>
         </div>
 
@@ -42,7 +42,7 @@
                     овощей
                 </p>
                 <div class="card-price">
-                    <p class="card-price-p">1 200 ₽</p>
+                    <p class="card-price-p">10 220 ₸</p>
                     <span class="card-price-icon">
                         <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                     </span>
@@ -61,7 +61,7 @@
                     <p class="card-p0 card-p1 card-2p0">Тирамису</p>
                     <p class="card-p0 card-p2 card-2p0">430 г</p>
                     <div class="card-price card-2p0">
-                        <p class="card-price-p">370 ₽</p>
+                        <p class="card-price-p">2 190 ₸</p>
                         <span class="card-price-icon">
                             <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                         </span>
@@ -75,6 +75,8 @@
                 Популярные <br />
                 блюда
             </h2>
+
+            
 
             <div class="all-other-cards">
                 <div class="card-0-1">
@@ -97,7 +99,7 @@
                             </p>
                         </a>
                         <div class="card-price card-prise-p0">
-                            <p class="card-price-p">470 ₽</p>
+                            <p class="card-price-p">2 880 ₸</p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
@@ -125,7 +127,7 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>620 ₽</s></span>495 ₽
+                                <span class="card-price-s"><s>3 820 ₸</s></span>3 040 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
@@ -154,7 +156,7 @@
                         </router-link>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>650 ₽</s></span>520 ₽
+                                <span class="card-price-s"><s>4 000 ₸</s></span>3 200 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
@@ -183,7 +185,7 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>1 435 ₽</s></span>1 148 ₽
+                                <span class="card-price-s"><s>8 850 ₸</s></span>7 060 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
@@ -211,7 +213,7 @@
                             </p>
                         </a>
                         <div class="card-price card-prise-p0">
-                            <p class="card-price-p">490 ₽</p>
+                            <p class="card-price-p">2 990 ₸</p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
@@ -239,12 +241,9 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s">410 ₽ -</span>430 ₽
+                                <span class="card-price-s">2 520 ₸ -</span>2 650 ₸
                             </p>
-                            <a href="#">
-                                <div class="card-price-icon-2">3 ВИДА</div>
-                            </a>
-                            <a class="card-price-icon-2a" href="#">
+                            <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
                         </div>
@@ -271,7 +270,7 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>620 ₽</s></span>495 ₽
+                                <span class="card-price-s"><s>3 800 ₸</s></span>3 050 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
@@ -299,7 +298,7 @@
                             </p>
                         </a>
                         <div class="card-price card-prise-p0">
-                            <p class="card-price-p">490 ₽</p>
+                            <p class="card-price-p">3 020 ₸</p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
@@ -327,7 +326,7 @@
                             </p>
                         </a>
                         <div class="card-price card-prise-p0">
-                            <p class="card-price-p">470 ₽</p>
+                            <p class="card-price-p">2 890 ₸</p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
@@ -355,12 +354,9 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s">410 ₽ -</span>430 ₽
+                                <span class="card-price-s">2 520 ₸ -</span>2 650 ₸
                             </p>
-                            <a href="#">
-                                <div class="card-price-icon-2">3 ВИДА</div>
-                            </a>
-                            <a class="card-price-icon-2a" href="#">
+                            <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
                             </a>
                         </div>
@@ -387,7 +383,7 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>650 ₽</s></span>520 ₽
+                                <span class="card-price-s"><s>4 000 ₸</s></span>3 200 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />
@@ -416,7 +412,7 @@
                         </a>
                         <div class="card-price card-price-p-2l">
                             <p class="card-price-p">
-                                <span class="card-price-s"><s>1 435 ₽</s></span>1 148 ₽
+                                <span class="card-price-s"><s>8 600 ₸</s></span>7 000 ₸
                             </p>
                             <a class="card-price-icon" href="#">
                                 <img src="/src/assets/images/basket-card.svg" alt="basket-card" width="20" />

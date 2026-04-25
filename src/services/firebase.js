@@ -265,3 +265,79 @@ export async function deleteOrder(orderId) {
 
   await deleteDoc(orderRef);
 }
+
+// ======================
+// ADMIN PANEL FUNCTIONS
+// ======================
+
+// Загрузка списка всех пользователей
+export async function loadAllUsers() {
+  const snap = await getDocs(collection(db, "users"));
+  return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}
+
+// Загрузка всех бронирований всех клиентов
+export async function loadAllReservations() {
+  const snap = await getDocs(collection(db, "reservations"));
+  return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}
+
+// Загрузка всех оформленных заказов
+export async function loadAllOrders() {
+  const snap = await getDocs(collection(db, "orders"));
+  return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}
+
+// Удаление пользователя из базы
+export async function deleteUser(userId) {
+  await deleteDoc(doc(db, "users", userId));
+}
+
+// Обновление данных конкретного бронирования
+export async function updateReservationData(id, table, date, time, people) {
+  const ref = doc(db, "reservations", id);
+  await updateDoc(ref, {
+    table: table,
+    date: date,
+    time: time,
+    people: people,
+    updatedAt: new Date()
+  });
+}
+
+// Изменение количества конкретного блюда в заказе
+export async function updateOrderItemQuantity(orderId, itemIndex, newQuantity) {
+  const orderRef = doc(db, "orders", orderId);
+  const snap = await getDoc(orderRef);
+  
+  if (snap.exists()) {
+    const orderData = snap.data();
+    const items = orderData.items;
+    
+    // Обновляем количество по индексу в массиве
+    items[itemIndex].quantity = newQuantity;
+    
+    await updateDoc(orderRef, { items });
+  }
+}
+
+// Удаление конкретного блюда из заказа
+export async function deleteOrderItem(orderId, itemIndex) {
+  const orderRef = doc(db, "orders", orderId);
+  const snap = await getDoc(orderRef);
+  
+  if (snap.exists()) {
+    const orderData = snap.data();
+    const items = orderData.items;
+    
+    // Удаляем 1 элемент по индексу
+    items.splice(itemIndex, 1);
+    
+    await updateDoc(orderRef, { items });
+  }
+}
+
+// Удаление конкретного бронирования (для админа)
+export async function deleteReservation(reservationId) {
+  await deleteDoc(doc(db, "reservations", reservationId));
+}

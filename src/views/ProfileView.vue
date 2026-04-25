@@ -17,27 +17,27 @@
           <div class="all-contact-us">
             <div class="contact-us">
               <p class="contact-us-div-p">Имя:</p>
-              <div>{{ userData.name || '—' }}</div>
+              <div class="white">{{ userData.name || '—' }}</div>
             </div>
 
             <div class="contact-us">
               <p class="contact-us-div-p">Email:</p>
-              <div>{{ userData.email }}</div>
+              <div class="white">{{ userData.email }}</div>
             </div>
 
             <div class="contact-us">
               <p class="contact-us-div-p">Телефон:</p>
-              <div>{{ userData.phone || '—' }}</div>
+              <div class="white">{{ userData.phone || '—' }}</div>
             </div>
 
             <div class="contact-us">
               <p class="contact-us-div-p">UID:</p>
-              <div>{{ userData.uid }}</div>
+              <div class="white">{{ userData.uid }}</div>
             </div>
 
             <div class="contact-us">
               <p class="contact-us-div-p admin-p">Вы админ?</p>
-              <div>{{ userData.role === 'admin' ? 'Да' : 'Нет' }}</div>
+              <div class="white">{{ userData.role === 'admin' ? 'Да' : 'Нет' }}</div>
             </div>
 
             <!-- 🔥 Кнопка админа -->
@@ -65,22 +65,22 @@
             <template v-for="(r, index) in reservations" :key="index">
               <div class="contact-us">
                 <p class="contact-us-div-p">Дата:</p>
-                <div>{{ r.date || '—' }}</div>
+                <div class="white">{{ r.date || '—' }}</div>
               </div>
 
               <div class="contact-us">
                 <p class="contact-us-div-p">Время:</p>
-                <div>{{ r.time }}</div>
+                <div class="white">{{ r.time }}</div>
               </div>
 
               <div class="contact-us">
                 <p class="contact-us-div-p">Персон:</p>
-                <div>{{ r.people || '—' }}</div>
+                <div class="white">{{ r.people || '—' }}</div>
               </div>
 
               <div class="contact-us">
                 <p class="contact-us-div-p">Стол:</p>
-                <div>{{ r.table }}</div>
+                <div class="white">{{ r.table }}</div>
               </div>
             </template>
           </div>
@@ -99,27 +99,27 @@
               <div class="order-profile">
                 <div class="contact-us">
                   <p class="contact-us-div-p">Блюдо:</p>
-                  <div>{{ item.name || '—' }}</div>
+                  <div class="white">{{ item.name || '—' }}</div>
                 </div>
 
                 <div class="contact-us">
                   <p class="contact-us-div-p">Вес:</p>
-                  <div>{{ item.weight || '—' }}</div>
+                  <div class="white">{{ item.weight || '—' }}</div>
                 </div>
 
                 <div class="contact-us">
                   <p class="contact-us-div-p">Цена:</p>
-                  <div>{{ item.price }} ₽</div>
+                  <div class="white">{{ item.price }} ₸</div>
                 </div>
 
                 <div class="contact-us">
                   <p class="contact-us-div-p">Количество:</p>
-                  <div>{{ item.quantity }}</div>
+                  <div class="white">{{ item.quantity }}</div>
                 </div>
 
                 <div class="contact-us">
                   <p class="contact-us-div-p">Сумма:</p>
-                  <div>{{ item.price * item.quantity }} ₽</div>
+                  <div class="white">{{ item.price * item.quantity }} ₸</div>
                 </div>
 
                 <hr style="border-color:white; opacity:0.3;">
@@ -129,7 +129,7 @@
             <!-- 💰 Итог -->
             <div v-if="orders.length" class="contact-us">
               <p class="contact-us-div-p">Итого:</p>
-              <div>{{ totalPrice }} ₽</div>
+              <div class="white">{{ totalPrice }} ₸</div>
             </div>
           </div>
         </div>

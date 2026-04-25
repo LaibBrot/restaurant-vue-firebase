@@ -75,7 +75,7 @@
             </div>
 
             <div class="card-price card-price-width-1">
-              <p class="card-price-p">125 ₽</p>
+              <p class="card-price-p">125 ₸</p>
               <a class="card-price-icon" href="#">
                 <img
                   src="/src/assets/images/basket-card.svg"
@@ -112,7 +112,7 @@
             </div>
 
             <div class="card-price card-price-width-1">
-              <p class="card-price-p">115 ₽</p>
+              <p class="card-price-p">115 ₸</p>
               <a class="card-price-icon" href="#">
                 <img
                   src="/src/assets/images/basket-card.svg"
@@ -149,7 +149,7 @@
             </div>
 
             <div class="card-price card-price-width-1">
-              <p class="card-price-p">125 ₽</p>
+              <p class="card-price-p">125 ₸</p>
               <a class="card-price-icon" href="#">
                 <img
                   src="/src/assets/images/basket-card.svg"
@@ -224,7 +224,7 @@
             </a>
 
             <div class="card-price card-prise-p0">
-              <p class="card-price-p">470 ₽</p>
+              <p class="card-price-p">470 ₸</p>
               <a class="card-price-icon" href="#">
                 <img
                   src="/src/assets/images/basket-card.svg"
@@ -265,7 +265,7 @@
 
             <div class="card-price card-price-p-2l">
               <p class="card-price-p">
-                <span class="card-price-s"><s>1 435 ₽</s></span>1 148 ₽
+                <span class="card-price-s"><s>1 435 ₸</s></span>1 148 ₸
               </p>
               <a class="card-price-icon" href="#">
                 <img
@@ -307,7 +307,7 @@
             </a>
 
             <div class="card-price card-prise-p0">
-              <p class="card-price-p">490 ₽</p>
+              <p class="card-price-p">490 ₸</p>
               <a class="card-price-icon" href="#">
                 <img
                   src="/src/assets/images/basket-card.svg"

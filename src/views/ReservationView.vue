@@ -6,9 +6,9 @@
       <!-- Заголовок -->
       <div class="head-h-1-12">
         <h2 class="head-h-1-2 head-h-1-2-res">Бронирование стола</h2>
-        <p class="head-p-1-2 head-p-1-2-a">г.Москва <br>ул.Улофа Пальме 5с2</p>
+        <p class="head-p-1-2 head-p-1-2-a">г.Алматы <br>пр.Достык 172</p>
         <p class="head-p-1-2 head-p-1-2-a">Вс - Чт 12:00 - 01:00<br>Пт - Сб 12:00 - 02:00</p>
-        <p class="head-p-1-2 head-p-1-2-a">+7 (499) 841-67-29</p>
+        <p class="head-p-1-2 head-p-1-2-a">+7 (778) 841-67-29</p>
       </div>
 
       <!-- Хлебные крошки -->
@@ -78,21 +78,8 @@
           <p class="office-input-con"><b>Стол:</b> {{ order.table }}</p>
 
           <div class="order-buttons">
-            <button @click="editOrder">Изменить</button>
-            <button @click="deleteOrder">Удалить</button>
-          </div>
-        </div>
-
-        <!-- корзина -->
-        <div class="order-res">
-          <p v-if="!cart.length" style="color:white">
-            Корзина пуста
-          </p>
-
-          <div v-for="item in cart" :key="item.id">
-            <p style="color:white">
-              {{ item.name }} — {{ item.quantity }} шт
-            </p>
+            <button class="edit-order" @click="editOrder">Изменить</button>
+            <button class="edit-order" @click="deleteOrder">Удалить</button>
           </div>
         </div>
 

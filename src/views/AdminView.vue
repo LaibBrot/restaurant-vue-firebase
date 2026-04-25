@@ -1,5 +1,5 @@
 <template>
-  <main class="container-xxl main-height">
+  <main class="container-xxl main-height main-height-min-h">
     <div class="head-h-0">
       <div class="head-h-0-profile-flex">
         <div class="head-h-0-profile">
@@ -67,10 +67,10 @@
             <div v-for="(item, index) in order.items" :key="index"
               style="border-top:1px solid rgba(255,255,255,0.2); margin-top:10px; padding-top:10px;">
               <p><b>Блюдо:</b> {{ item.name }}</p>
-              <p>Цена: {{ item.price }} ₽</p>
+              <p>Цена: {{ item.price }} ₸</p>
               <p>Вес: {{ item.weight || '—' }}</p>
               <p>Количество: {{ item.quantity }}</p>
-              <p>Сумма: {{ item.price * item.quantity }} ₽</p>
+              <p>Сумма: {{ item.price * item.quantity }} ₸</p>
 
               <input v-model="item.newQuantity" class="office-input-3 office-input-3-admin" type="number" min="1"
                 placeholder="Новое количество" />

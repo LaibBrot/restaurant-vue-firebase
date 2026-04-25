@@ -1,22 +1,37 @@
 <template>
-  <main class="container-xxl">
+  <main class="container-xxl main-height main-height-min-h">
 
-    <!-- 🔍 поиск -->
-    <input
-      v-model="search"
-      placeholder="Поиск..."
-      class="office-input"
-    />
+    <div class="head-h-0">
+      <h2 class="head-h-1">Горячие блюда</h2>
+      <div class="head-pages">
+        <router-link class="head-pages-1" to="/">Главная</router-link>
+        <p class="head-pages-slash">/</p>
+        <p class="head-pages-2">Горячие блюда</p>
+      </div>
+    </div>
 
-    <!-- 🔽 сортировка -->
-    <div>
-      <button @click="sortType = 'priceAsc'">Цена ↑</button>
-      <button @click="sortType = 'priceDesc'">Цена ↓</button>
-      <button @click="sortType = 'popularity'">Популярность</button>
+    <div class="sorting">
+      <p class="sorting-p">СОРТИРОВАТЬ:</p>
+
+      <button class="sorting-b" @click="sortType = 'priceAsc'">
+        ПО ВОЗРАСТАНИЮ ЦЕНЫ
+      </button>
+
+      <button class="sorting-b" @click="sortType = 'priceDesc'">
+        ПО УБЫВАНИЮ ЦЕНЫ
+      </button>
+
+      <button class="sorting-b" @click="sortType = 'popularity'">
+        ПО ПОПУЛЯРНОСТИ
+      </button>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск блюда...">
+      </div>
     </div>
 
     <!-- 🍽️ блюда -->
-    <div class="dishes-container">
+    <div class="hot-dishes-cards">
       <div
         v-for="dish in filteredDishes"
         :key="dish.id"
@@ -38,7 +53,7 @@
           </p>
 
           <div class="card-price">
-            <p class="card-price-p">{{ dish.price }} ₽</p>
+            <p class="card-price-p">{{ dish.price }} ₸</p>
           </div>
 
           <button

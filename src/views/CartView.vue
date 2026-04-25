@@ -49,7 +49,7 @@
         </div>
 
         <p class="card-price-p card-price-p-1">
-          {{ item.price }} ₽
+          {{ item.price }} ₸
         </p>
 
         <div class="forms-cards-sum">
@@ -58,7 +58,7 @@
 
         <div class="card-price card-price-width-2">
           <p class="card-price-p card-price-p-2">
-            {{ item.price * item.quantity }} ₽
+            {{ item.price * item.quantity }} ₸
           </p>
 
           <button
