@@ -34,6 +34,9 @@
           СОЗДАТЬ АККАУНТ
         </div>
       </div>
+      <div class="contact-us-bg-2">
+        <img src="/src/assets/images/contact-us-bg-2.png" alt="" width="500" />
+      </div>
     </div>
   </main>
 </template>
