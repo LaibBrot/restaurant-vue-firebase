@@ -121,7 +121,6 @@ const users = ref([])
 const reservations = ref([])
 const orders = ref([])
 
-// 🔥 ЗАГРУЗКА ДАННЫХ
 onMounted(async () => {
   users.value = await loadAllUsers()
   reservations.value = await loadAllReservations()
@@ -129,9 +128,6 @@ onMounted(async () => {
 })
 
 
-// ======================
-// ВСПОМОГАТЕЛЬНЫЕ
-// ======================
 
 function getUserName(userId) {
   const user = users.value.find(u => u.id === userId)
@@ -149,9 +145,6 @@ function getUserPhone(userId) {
 }
 
 
-// ======================
-// USERS
-// ======================
 
 async function handleDeleteUser(userId) {
   if (!confirm('Удалить пользователя?')) return
@@ -165,9 +158,6 @@ async function handleDeleteUser(userId) {
 }
 
 
-// ======================
-// RESERVATIONS
-// ======================
 
 async function handleUpdateReservation(reservation) {
   try {
@@ -196,9 +186,6 @@ async function handleDeleteReservation(reservationId) {
 }
 
 
-// ======================
-// ORDERS
-// ======================
 
 async function handleDeleteOrder(orderId) {
   if (!confirm('Удалить заказ?')) return

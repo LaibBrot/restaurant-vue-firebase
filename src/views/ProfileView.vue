@@ -1,7 +1,6 @@
 <template>
   <main class="main-height main-height-min-h container-xxl">
     <div class="head-h-0">
-      <!-- Хлебные крошки -->
       <div class="head-pages-normal head-pages-normal-bot">
         <router-link class="head-pages-1" to="/">Главная</router-link>
         <p class="head-pages-1">/</p>
@@ -10,7 +9,6 @@
 
       <div class="head-h-0-profile-flex">
         
-        <!-- 👤 Профиль -->
         <div class="head-h-0-profile">
           <h2 class="head-h-1-2">Профиль пользователя</h2>
 
@@ -40,7 +38,6 @@
               <div class="white">{{ userData.role === 'admin' ? 'Да' : 'Нет' }}</div>
             </div>
 
-            <!-- 🔥 Кнопка админа -->
             <div v-if="userData.role === 'admin'" class="admin-div">
               <div class="button-admin" @click="goToAdmin">
                 ПЕРЕЙТИ В АДМИН ПАНЕЛЬ
@@ -53,7 +50,6 @@
           </div>
         </div>
 
-        <!-- 📅 Бронирования -->
         <div class="head-h-0-profile">
           <h2 class="head-h-1-2">Ваше бронирование</h2>
 
@@ -86,7 +82,6 @@
           </div>
         </div>
 
-        <!-- 🛒 Заказы -->
         <div class="head-h-0-profile head-h-0-profile-2">
           <h2 class="head-h-1-2">Ваш заказ меню</h2>
 
@@ -126,7 +121,6 @@
               </div>
             </template>
 
-            <!-- 💰 Итог -->
             <div v-if="orders.length" class="contact-us">
               <p class="contact-us-div-p">Итого:</p>
               <div class="white">{{ totalPrice }} ₸</div>
@@ -143,7 +137,6 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
-// 🔥 Firebase
 import {
   watchAuth,
   getProfile,
@@ -181,7 +174,6 @@ onMounted(() => {
   })
 })
 
-// 💰 итог
 const totalPrice = computed(() =>
   orders.value.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -189,13 +181,11 @@ const totalPrice = computed(() =>
   )
 )
 
-// 🔐 выход
 async function logout() {
   await logoutUser()
   router.push('/login')
 }
 
-// 👑 переход в админку
 function goToAdmin() {
   router.push('/admin')
 }

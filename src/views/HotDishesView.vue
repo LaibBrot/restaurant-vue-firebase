@@ -77,30 +77,22 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 
-// 🔥 Firebase
 import { loadDishes, addToCart as fbAddToCart } from '@/services/firebase'
 
-// 🔹 все блюда
 const allDishes = ref([])
 
-// 🔹 поиск
 const search = ref('')
 
-// 🔹 сортировка
 const sortType = ref('default')
 
-// 🔄 загрузка блюд
 async function fetchDishes() {
   allDishes.value = await loadDishes(sortType.value)
 }
 
-// при старте
 onMounted(fetchDishes)
 
-// при смене сортировки
 watch(sortType, fetchDishes)
 
-// 🔍 фильтр (без сортировки — она уже в Firebase)
 const filteredDishes = computed(() => {
   if (!search.value) return allDishes.value
 
@@ -109,7 +101,6 @@ const filteredDishes = computed(() => {
   )
 })
 
-// 🛒 добавление в корзину
 async function addToCart(dish) {
   try {
     await fbAddToCart(dish)

@@ -3,7 +3,6 @@
 
     <div class="content-div">
 
-      <!-- Заголовок -->
       <div class="head-h-1-12">
         <h2 class="head-h-1-2 head-h-1-2-res">Бронирование стола</h2>
         <div class="head-p-1-2-div-in">
@@ -13,7 +12,6 @@
         <p class="head-p-1-2 head-p-1-2-a">+7 (778) 841-67-29</p>
       </div>
 
-      <!-- Хлебные крошки -->
       <div class="head-pages-normal">
         <router-link class="head-pages-1" to="/">Главная</router-link>
         <p class="head-pages-1">/</p>
@@ -22,7 +20,6 @@
 
       <div class="all-reservation-flex">
 
-        <!-- Форма -->
         <div class="all-reservation">
           <div class="order-block">
             <p class="res-p">Выберите параметры:</p>
@@ -37,7 +34,6 @@
               </button>
             </div>
 
-            <!-- Список столов -->
             <div class="tables-list">
               <button
                 v-for="table in availableTables"
@@ -53,7 +49,6 @@
               </p>
             </div>
 
-            <!-- выбранный стол -->
             <div class="selected-table">
               Выбранный столик:
               <span class="selected-table-con">
@@ -67,7 +62,6 @@
           </button>
         </div>
 
-        <!-- заказ -->
         <div v-if="order" class="order-block-2">
           <p class="res-p">Ваш заказ:</p>
 
@@ -98,7 +92,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// 🔥 Firebase
 import {
   watchAuth,
   getProfile,
@@ -109,7 +102,6 @@ import {
   loadCart
 } from '@/services/firebase'
 
-// 📊 state
 const date = ref('')
 const time = ref('')
 const people = ref('')
@@ -122,17 +114,14 @@ const cart = ref([])
 const currentUser = ref(null)
 const order = ref(null)
 
-// 🔥 ЗАГРУЗКА ПОЛЬЗОВАТЕЛЯ + ДАННЫХ
 onMounted(() => {
   watchAuth(async (user) => {
     if (!user) return
 
     currentUser.value = await getProfile(user.uid)
 
-    // 📦 загрузка корзины
     cart.value = await loadCart()
 
-    // 📅 загрузка существующей брони
     const reservations = await loadReservations()
     if (reservations.length) {
       order.value = reservations[0]
@@ -140,7 +129,6 @@ onMounted(() => {
   })
 })
 
-// 🔍 ПОКАЗ СТОЛОВ
 async function checkTables() {
   tableMessage.value = ''
 
@@ -164,7 +152,6 @@ async function checkTables() {
   availableTables.value = filtered
 }
 
-// 🪑 выбор стола
 function selectTable(name) {
   selectedTable.value = name
 }
@@ -201,7 +188,6 @@ async function confirmReservation() {
   availableTables.value = []
 }
 
-// ✏️ редактирование
 function editOrder() {
   date.value = order.value.date
   time.value = order.value.time
@@ -210,7 +196,6 @@ function editOrder() {
   order.value = null
 }
 
-// 🗑 удаление
 async function deleteOrder() {
   await deleteCurrentReservation()
 

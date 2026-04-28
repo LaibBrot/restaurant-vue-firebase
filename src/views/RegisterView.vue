@@ -9,7 +9,6 @@
         <p class="head-pages-2">Регистрация</p>
       </div>
 
-      <!-- Форма -->
       <div class="all-contact-us">
         <div class="contact-us">
           <p class="contact-us-div-p">ИМЯ:</p>
@@ -43,7 +42,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-// 🔥 Firebase
 import { registerUser } from '@/services/firebase'
 
 const name = ref('')

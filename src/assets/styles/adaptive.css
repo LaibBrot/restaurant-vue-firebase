@@ -9,25 +9,20 @@
 
 @media (max-width: 1024px) {
 
-    /* Скрываем текстовые ссылки на мобильных и планшетах */
     .nav-text-link {
         display: none;
     }
 
-    /* Аккуратно выстраиваем иконки профиля и корзины */
     .nav-right {
         display: flex;
         align-items: center;
         gap: 15px;
-        /* Ровный отступ между иконками */
     }
 
-    /* ... здесь остальной код, который уже был в 1024px ... */
     .nav-center {
         display: none;
     }
 
-    /* и так далее */
     .nav-center {
         display: none;
     }
@@ -287,7 +282,6 @@
 
 
 
-/* бронирования стола */
 @media (max-width: 1024px) {
     .head-h-1-2 {
         font-size: 25px;
@@ -305,9 +299,7 @@
 
 
 
-/* экраны  768 */
 
-/* главная */
 
 @media (max-width: 768px) {
     .img-steak {
@@ -399,7 +391,6 @@
     }
 }
 
-/* горячие блюда */
 
 @media (max-width: 768px) {
     .head-h-1 {
@@ -411,7 +402,6 @@
     }
 }
 
-/* хинкали */
 
 @media (max-width: 768px) {
     .head-h-0-profile-dishes {
@@ -443,7 +433,6 @@
     }
 }
 
-/* корзина */
 
 @media (max-width: 768px) {
     .all-shopping-cart-cards {
@@ -497,7 +486,6 @@
     }
 }
 
-/* обратная связь */
 
 @media (max-width: 768px) {
     .contact-us-bg-1 {
@@ -505,7 +493,6 @@
     }
 }
 
-/* бронирования стола */
 
 @media (max-width: 768px) {
     .head-h-1-hot {
@@ -572,11 +559,11 @@
         gap: 10px;
     }
     .order-block-2 {
-        transition: none; /* Отключаем саму плавность анимации */
+        transition: none;
     }
 
     .order-block-2:hover {
-        transform: none; /* Отменяем увеличение блока при касании/наведении */
+        transform: none;
     }
     .confirm-order-div {
         position: relative;
@@ -596,9 +583,6 @@
 
 
 
-/* экраны 320px */
-
-/* главная */
 
 @media (min-width: 321px) {
     .nav-right-res-a {
@@ -797,7 +781,6 @@
     }
 }
 
-/* горячие блюда */
 
 @media (max-width: 320px) {
     .head-h-1 {
@@ -826,7 +809,6 @@
     }
 }
 
-/* хинкали */
 
 @media (max-width: 320px) {
     .head-h-1-k {
@@ -878,7 +860,6 @@
     }
 }
 
-/* корзина */
 
 @media (max-width: 320px) {
     .head-h-1-s {
@@ -942,7 +923,6 @@
     }
 }
 
-/* обратная связь */
 
 @media (max-width: 320px) {
     .head-h-0-c {
@@ -1099,7 +1079,6 @@
 }
 
 
-/* бронирование стола */
 
 @media (max-width: 320px) {
     .head-h-1-2-res {
@@ -1210,8 +1189,8 @@
         display: none;
     }
     .head-h-0-profile-dishes {
-        position: static; /* Возвращаем элемент в стандартный поток документа */
-        top: auto;        /* Сбрасываем сдвиг в -500px */
+        position: static;
+        top: auto;
     }
     .head-h-1-hot {
         width: 280px;

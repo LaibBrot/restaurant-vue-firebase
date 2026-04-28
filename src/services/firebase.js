@@ -62,9 +62,6 @@ export function watchAuth(callback) {
 }
 
 
-// ======================
-// PROFILE
-// ======================
 
 export async function getProfile(uid) {
   const snap = await getDoc(doc(db, "users", uid));
@@ -72,9 +69,6 @@ export async function getProfile(uid) {
 }
 
 
-// ======================
-// RESERVATIONS
-// ======================
 
 export async function saveReservation(orderData) {
   const user = auth.currentUser;
@@ -118,21 +112,12 @@ export async function deleteCurrentReservation() {
   await deleteDoc(doc(db, "reservations", user.uid));
 }
 
-
-// ======================
-// TABLES
-// ======================
-
 export async function loadTables() {
   const snap = await getDocs(collection(db, "tables"));
 
   return snap.docs.map(doc => doc.data());
 }
 
-
-// ======================
-// DISHES
-// ======================
 
 export async function loadDishes(sortType = "default") {
   let q;
@@ -156,9 +141,6 @@ export async function loadDishes(sortType = "default") {
 }
 
 
-// ======================
-// CART
-// ======================
 
 export async function addToCart(dish) {
   const user = auth.currentUser;
@@ -204,10 +186,6 @@ export async function removeFromCart(id) {
 }
 
 
-// ======================
-// ORDERS
-// ======================
-
 export async function createOrder() {
   const user = auth.currentUser;
   if (!user) throw new Error("Не авторизован");
@@ -248,7 +226,6 @@ export async function deleteOrder(orderId) {
   const data = snap.data();
   const userId = data.userId;
 
-  // очистка корзины пользователя
   const cartSnap = await getDocs(collection(db, "users", userId, "cart"));
 
   for (const cartDoc of cartSnap.docs) {
@@ -258,34 +235,26 @@ export async function deleteOrder(orderId) {
   await deleteDoc(orderRef);
 }
 
-// ======================
-// ADMIN PANEL FUNCTIONS
-// ======================
 
-// Загрузка списка всех пользователей
 export async function loadAllUsers() {
   const snap = await getDocs(collection(db, "users"));
   return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
-// Загрузка всех бронирований всех клиентов
 export async function loadAllReservations() {
   const snap = await getDocs(collection(db, "reservations"));
   return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
-// Загрузка всех оформленных заказов
 export async function loadAllOrders() {
   const snap = await getDocs(collection(db, "orders"));
   return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
-// Удаление пользователя из базы
 export async function deleteUser(userId) {
   await deleteDoc(doc(db, "users", userId));
 }
 
-// Обновление данных конкретного бронирования
 export async function updateReservationData(id, table, date, time, people) {
   const ref = doc(db, "reservations", id);
   await updateDoc(ref, {
@@ -297,7 +266,6 @@ export async function updateReservationData(id, table, date, time, people) {
   });
 }
 
-// Изменение количества конкретного блюда в заказе
 export async function updateOrderItemQuantity(orderId, itemIndex, newQuantity) {
   const orderRef = doc(db, "orders", orderId);
   const snap = await getDoc(orderRef);
@@ -306,14 +274,12 @@ export async function updateOrderItemQuantity(orderId, itemIndex, newQuantity) {
     const orderData = snap.data();
     const items = orderData.items;
     
-    // Обновляем количество по индексу в массиве
     items[itemIndex].quantity = newQuantity;
     
     await updateDoc(orderRef, { items });
   }
 }
 
-// Удаление конкретного блюда из заказа
 export async function deleteOrderItem(orderId, itemIndex) {
   const orderRef = doc(db, "orders", orderId);
   const snap = await getDoc(orderRef);
@@ -322,14 +288,12 @@ export async function deleteOrderItem(orderId, itemIndex) {
     const orderData = snap.data();
     const items = orderData.items;
     
-    // Удаляем 1 элемент по индексу
     items.splice(itemIndex, 1);
     
     await updateDoc(orderRef, { items });
   }
 }
 
-// Удаление конкретного бронирования (для админа)
 export async function deleteReservation(reservationId) {
   await deleteDoc(doc(db, "reservations", reservationId));
 }

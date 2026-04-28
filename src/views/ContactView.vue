@@ -1,11 +1,9 @@
 <template>
   <main class="main-height main-height-min-h container-xxl">
-    <!-- Кнопка бронирования -->
     <router-link to="/reservation">
       <div class="nav-right-res-a">ЗАБРОНИРОВАТЬ СТОЛ</div>
     </router-link>
 
-    <!-- Заголовок -->
     <div class="head-h-0 head-h-0-c">
       <h2 class="head-h-1-2">Обратная связь</h2>
 
@@ -15,7 +13,6 @@
         <p class="head-pages-2">Обратная связь</p>
       </div>
 
-      <!-- Форма -->
       <div class="all-contact-us">
         <div class="contact-us">
           <p class="contact-us-div-p">
@@ -45,7 +42,6 @@
         </div>
       </div>
 
-      <!-- Фон -->
       <div class="contact-us-bg-2">
         <img
           src="/src/assets/images/contact-us-bg-2.png"
@@ -74,7 +70,6 @@ function sendMessage() {
 
   alert('Сообщение отправлено!')
 
-  // очистка формы
   message.value = ''
   email.value = ''
 }

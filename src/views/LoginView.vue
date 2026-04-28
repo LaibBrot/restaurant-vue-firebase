@@ -1,11 +1,9 @@
 <template>
   <main class="main-height main-height-min-h container-xxl">
-    <!-- Кнопка бронирования -->
     <router-link to="/reservation">
       <div class="nav-right-res-a">ЗАБРОНИРОВАТЬ СТОЛ</div>
     </router-link>
 
-    <!-- Заголовок -->
     <div class="head-h-0 head-h-0-c">
       <h2 class="head-h-1-2">Вход</h2>
 
@@ -15,7 +13,6 @@
         <p class="head-pages-2">Вход</p>
       </div>
 
-      <!-- Форма -->
       <div class="all-contact-us">
         <div class="contact-us">
           <p class="contact-us-div-p">EMAIL:</p>
@@ -38,7 +35,6 @@
         </div>
       </div>
 
-      <!-- Фон -->
       <div class="contact-us-bg-2">
         <img src="/src/assets/images/contact-us-bg-2.png" alt="" width="500" />
       </div>
@@ -55,7 +51,6 @@ const email = ref('')
 const password = ref('')
 const router = useRouter()
 
-// ✅ функция логина
 async function login() {
   if (!email.value || !password.value) {
     alert('Введите email и пароль')

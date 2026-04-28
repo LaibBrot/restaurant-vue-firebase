@@ -1,11 +1,9 @@
 <template>
   <main class="main-height main-height-min-h container-xxl">
-    <!-- Кнопка брони -->
     <router-link to="/reservation">
       <div class="nav-right-res-a">ЗАБРОНИРОВАТЬ СТОЛ</div>
     </router-link>
 
-    <!-- Заголовок -->
     <div class="head-h-0">
       <div class="head-h-sum">
         <h2 class="head-h-1-s">Корзина</h2>
@@ -19,7 +17,6 @@
       </div>
     </div>
 
-    <!-- Таблица -->
     <div class="all-shopping-cart-cards">
       <div class="shopping-cart-cards-p">
         <p class="shopping-cart-cards-p-0 shopping-cart-cards-p-1">БЛЮДО:</p>
@@ -28,12 +25,10 @@
         <p class="shopping-cart-cards-p-0 shopping-cart-cards-p-4">СУММА:</p>
       </div>
 
-      <!-- Если корзина пустая -->
       <p v-if="!cart.length" style="color:white">
         Корзина пуста
       </p>
 
-      <!-- Список товаров -->
       <div
         v-for="item in cart"
         :key="item.id"
@@ -73,7 +68,6 @@
         </div>
       </div>
 
-      <!-- Кнопка заказа -->
       <button
         class="payment-card-end"
         @click="createOrder"
@@ -87,7 +81,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-// 🔥 Firebase
 import {
   loadCart,
   removeFromCart,
@@ -96,25 +89,20 @@ import {
 
 const cart = ref([])
 
-// 🔄 загрузка корзины
 onMounted(async () => {
   cart.value = await loadCart()
 })
 
-// 📊 общее количество
 const totalCount = computed(() =>
   cart.value.reduce((sum, item) => sum + item.quantity, 0)
 )
 
-// ❌ удаление из Firebase
 async function removeItem(id) {
   await removeFromCart(id)
 
-  // обновляем локально
   cart.value = cart.value.filter(item => item.id !== id)
 }
 
-// 💳 оформление заказа
 async function createOrderHandler() {
   if (!cart.value.length) {
     alert('Корзина пуста')

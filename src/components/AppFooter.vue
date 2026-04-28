@@ -52,31 +52,30 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-// Вычисляем класс для футера в зависимости от текущей страницы
 const currentFooterClass = computed(() => {
   switch (route.path) {
     case '/':
-      return 'footer-height'      // Для главной
+      return 'footer-height'
     case '/hot-dishes':
-      return 'footer-height-2'    // Для горячих блюд
+      return 'footer-height-2'
     case '/khinkali':
-      return 'footer-height-3'    // Для хинкали
+      return 'footer-height-3'
     case '/cart':
-      return 'footer-height-4'    // Для корзины
+      return 'footer-height-4'
     case '/reservation':
-      return 'footer-height-5'    // Для бронирования
+      return 'footer-height-5'
     case '/contact':
-      return 'footer-height-6'    // Для обратной связи
+      return 'footer-height-6'
     case '/login':
-      return 'footer-height-7'    // Для входа
+      return 'footer-height-7'
     case '/register':
-      return 'footer-height-8'    // Для регистрации
+      return 'footer-height-8'
     case '/profile':
-      return 'footer-height-9'    // Для профиля
+      return 'footer-height-9'
     case '/admin':
-      return 'footer-height-10'   // Для админ-панели
+      return 'footer-height-10'
     default:
-      return 'footer-height'      // По умолчанию, если страница не найдена в списке
+      return 'footer-height'
   }
 })
 </script>
