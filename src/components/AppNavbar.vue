@@ -44,77 +44,84 @@
                     </ul>
                 </div>
 
-                <div class="menu-button">
+                <router-link to="/hot-dishes" class="menu-button" style="text-decoration: none;">
                     <span>
                         <img src="/src/assets/images/menu-button.svg" alt="menu-button" />
                     </span>
                     <span class="menu-text">МЕНЮ</span>
-                </div>
+                </router-link>
 
                 <div class="nav-right">
                     <router-link to="/reservation">
                         <div class="nav-right-res">ЗАБРОНИРОВАТЬ СТОЛ</div>
                     </router-link>
 
-                    <router-link to="/cart">
+                    <router-link to="/profile" class="nav-icon-link">
+                        <img src="/src/assets/images/profile-icon.svg" alt="Профиль" height="20" />
+                    </router-link>
+
+                    <router-link to="/cart" class="nav-icon-link">
                         <img src="/src/assets/images/basket-icon.svg" alt="Корзина" height="20" />
                     </router-link>
 
-                    <router-link to="/login">Войти</router-link>
-                    <router-link to="/register">Регистрация</router-link>
-
-                    <router-link to="/profile">
-                        <img src="/src/assets/images/profile-icon.svg" alt="Профиль" height="20" />
-                    </router-link>
+                    <router-link to="/login" class="nav-text-link">Войти</router-link>
+                    <router-link to="/register" class="nav-text-link">Регистрация</router-link>
                 </div>
             </nav>
         </header>
     </div>
 </template>
 
+
+
 <style scoped>
 /* 1. Родительский элемент */
 .custom-dropdown-wrapper {
     color: white;
-  position: relative; /* Критически важно: удерживает меню прямо под ссылкой */
-  list-style: none;
-    z-index: 9999; /* Гарантирует, что меню будет ПОВЕРХ всех картинок и карточек */
+    position: relative;
+    /* Критически важно: удерживает меню прямо под ссылкой */
+    list-style: none;
+    z-index: 9999;
+    /* Гарантирует, что меню будет ПОВЕРХ всех картинок и карточек */
 
 }
 
 /* 2. Само выпадающее меню */
 .custom-menu {
-  display: none; /* Скрыто по умолчанию */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 9999; /* Гарантирует, что меню будет ПОВЕРХ всех картинок и карточек */
-  width: 180px;
-  margin: 0;
-  padding: 10px 0;
-  background-color: black;
-  list-style: none;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Добавляет легкую тень для отделения от фона */
+    display: none;
+    /* Скрыто по умолчанию */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    /* Гарантирует, что меню будет ПОВЕРХ всех картинок и карточек */
+    width: 180px;
+    margin: 0;
+    padding: 10px 0;
+    background-color: black;
+    list-style: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    /* Добавляет легкую тень для отделения от фона */
 }
 
 /* 3. Логика появления (открывается при наведении на родителя) */
 .custom-dropdown-wrapper:hover .custom-menu {
-  display: block;
+    display: block;
 }
 
 /* 4. Стили ссылок внутри меню */
 .custom-menu li a {
-  display: block;
-  padding: 8px 15px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
 }
 
 /* 5. Эффект наведения на конкретное блюдо (как на скриншоте) */
 .custom-menu li a:hover {
-  background-color: #333333; 
+    background-color: #333333;
 }
 </style>
 

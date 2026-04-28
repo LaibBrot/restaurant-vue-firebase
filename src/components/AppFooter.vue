@@ -1,6 +1,6 @@
 <template>
   <div class="container-xxl">
-    <footer class="footer" :class="{ 'footer-height': route.path === '/' }">
+    <footer class="footer" :class="currentFooterClass">
       <div class="footer-top">
         <div class="footer-left">
           <img src="/src/assets/images/Logo.svg" alt="Logo" width="120" />
@@ -15,8 +15,8 @@
 
         <div class="footer-right">
           <p class="head-p-1-2 head-p-1-2-n">
-            г.Алматы <br />
-            пр.Достык 172
+            г.Москва <br />
+            ул.Улофа Пальме 5с2
           </p>
 
           <p class="head-p-1-2 head-p-1-2-n">
@@ -24,7 +24,7 @@
             Пт - Сб 12:00 - 02:00
           </p>
 
-          <p class="phone head-p-1-2 head-p-1-2-p">+7 (778) 841-67-29</p>
+          <p class="phone head-p-1-2 head-p-1-2-p">+7 (499) 841-67-29</p>
 
           <a href="#" class="email head-p-1-2">
             <u>delivery@midas.rest</u>
@@ -34,7 +34,7 @@
 
       <div class="footer-bottom">
         <div class="copyright">
-          © 2009–2026, ООО «MIDAS», официальный сайт
+          © 2009–2019, ООО «MIDAS», официальный сайт
         </div>
 
         <div class="footer-links">
@@ -47,8 +47,36 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-// Получаем информацию о текущей странице
 const route = useRoute()
+
+// Вычисляем класс для футера в зависимости от текущей страницы
+const currentFooterClass = computed(() => {
+  switch (route.path) {
+    case '/':
+      return 'footer-height'      // Для главной
+    case '/hot-dishes':
+      return 'footer-height-2'    // Для горячих блюд
+    case '/khinkali':
+      return 'footer-height-3'    // Для хинкали
+    case '/cart':
+      return 'footer-height-4'    // Для корзины
+    case '/reservation':
+      return 'footer-height-5'    // Для бронирования
+    case '/contact':
+      return 'footer-height-6'    // Для обратной связи
+    case '/login':
+      return 'footer-height-7'    // Для входа
+    case '/register':
+      return 'footer-height-8'    // Для регистрации
+    case '/profile':
+      return 'footer-height-9'    // Для профиля
+    case '/admin':
+      return 'footer-height-10'   // Для админ-панели
+    default:
+      return 'footer-height'      // По умолчанию, если страница не найдена в списке
+  }
+})
 </script>

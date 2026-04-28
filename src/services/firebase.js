@@ -1,4 +1,3 @@
-// 🔥 Firebase SDK (уже npm, НЕ CDN)
 import { initializeApp } from "firebase/app";
 
 import {
@@ -23,7 +22,6 @@ import {
   orderBy
 } from "firebase/firestore";
 
-// 🔑 CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyA8LpPcLQP4q_ESKX1uH8iGXSXPAf82Ub8",
   authDomain: "midas-bd-ff00a.firebaseapp.com",
@@ -33,15 +31,9 @@ const firebaseConfig = {
   appId: "1:182776076466:web:c19bbad309ee55786691ab"
 };
 
-// 🚀 INIT
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-
-// ======================
-// AUTH
-// ======================
 
 export async function registerUser(name, email, phone, password) {
   const cred = await createUserWithEmailAndPassword(auth, email, password);

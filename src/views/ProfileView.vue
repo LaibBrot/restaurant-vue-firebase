@@ -159,7 +159,6 @@ const userData = ref({})
 const reservations = ref([])
 const orders = ref([])
 
-// 🔄 загрузка данных
 onMounted(() => {
   watchAuth(async (user) => {
     if (!user) {
@@ -167,21 +166,15 @@ onMounted(() => {
       return
     }
 
-    // 👤 профиль
     const data = await getProfile(user.uid)
     userData.value = {
       ...data,
       uid: user.uid
     }
-
-    // 📅 брони
     reservations.value = await loadReservations()
 
-    // 🛒 заказы
     const userOrders = await loadOrders()
 
-    // 🔥 у тебя loadOrders возвращает список заказов пользователя
-    // берём items из первого (как в старом проекте)
     if (userOrders.length) {
       orders.value = userOrders[0].items || []
     }

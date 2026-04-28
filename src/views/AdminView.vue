@@ -5,11 +5,11 @@
         <div class="head-h-0-profile">
           <h2 class="head-h-1-2">Пользователи</h2>
 
-          <div v-for="user in users" :key="user.id" style="border:1px solid white;margin:10px;padding:10px;color:white">
+          <div v-for="user in users" :key="user.id" style="border:1px solid white;margin-top:10px;padding:10px;color:white">
             <p>Имя: {{ user.name }}</p>
             <p>Email: {{ user.email }}</p>
             <p>Телефон: {{ user.phone }}</p>
-            <p>UID: {{ user.id }}</p>
+            <p class="user-uid-admin">UID: {{ user.id }}</p>
 
             <button class="nav-right-res nav-right-res-admin-button" @click="handleDeleteUser(user.id)">
               Удалить пользователя
@@ -21,7 +21,7 @@
           <h2 class="head-h-1-2">Бронирования</h2>
 
           <div v-for="reservation in reservations" :key="reservation.id"
-            style="border:1px solid white;margin:10px;padding:10px;color:white">
+            style="border:1px solid white;margin-top:10px;padding:10px;color:white">
             <p><b>Пользователь:</b> {{ getUserName(reservation.userId) }}</p>
             <p>Email: {{ getUserEmail(reservation.userId) }}</p>
             <p>Телефон: {{ getUserPhone(reservation.userId) }}</p>
@@ -54,15 +54,15 @@
           </div>
         </div>
 
-        <div class="head-h-0-profile">
+        <div class="head-h-0-profile head-h-0-profile-dishes">
           <h2 class="head-h-1-2">Заказы</h2>
 
           <div v-for="order in orders" :key="order.id"
-            style="border:1px solid white; margin:10px; padding:10px; color:white;">
+            style="border:1px solid white; margin-top:10px; padding:10px; color:white;">
             <p><b>Пользователь:</b> {{ getUserName(order.userId) }}</p>
             <p>Email: {{ getUserEmail(order.userId) }}</p>
             <p>Телефон: {{ getUserPhone(order.userId) }}</p>
-            <p>UID: {{ order.userId }}</p>
+            <p class="user-uid-admin">UID: {{ order.userId }}</p>
 
             <div v-for="(item, index) in order.items" :key="index"
               style="border-top:1px solid rgba(255,255,255,0.2); margin-top:10px; padding-top:10px;">

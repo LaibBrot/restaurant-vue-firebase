@@ -2,15 +2,40 @@
     .menu-button {
         display: none;
     }
+    .footer-height-10 {
+        display: none;
+    }
 }
 
 @media (max-width: 1024px) {
+
+    /* Скрываем текстовые ссылки на мобильных и планшетах */
+    .nav-text-link {
+        display: none;
+    }
+
+    /* Аккуратно выстраиваем иконки профиля и корзины */
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        /* Ровный отступ между иконками */
+    }
+
+    /* ... здесь остальной код, который уже был в 1024px ... */
     .nav-center {
         display: none;
     }
+
+    /* и так далее */
+    .nav-center {
+        display: none;
+    }
+
     .menu {
         width: 1000px;
     }
+
     .menu-button {
         margin-right: auto;
         margin-left: 70px;
@@ -18,98 +43,122 @@
         gap: 10px;
         align-items: center;
     }
+
     .menu-text {
         color: white;
         font-size: 12px;
     }
+
     .meshs-1 {
         position: relative;
         right: 20px;
     }
+
     .head-p-1 {
         font-size: 25px;
         position: relative;
         right: 21px;
     }
+
     .head-p-2 {
         font-size: 22px;
     }
+
     .head-p-3 {
         font-size: 16px;
     }
+
     .head-p-2-3 {
         position: relative;
         right: 21px;
     }
+
     .img-steak {
         position: relative;
         bottom: 30px;
         right: 47px;
     }
+
     .meshs-2 {
         position: relative;
         right: 300px;
         bottom: 200px;
     }
+
     .card-1 {
         position: relative;
         bottom: 200px;
     }
+
     .card-2 {
         position: absolute;
         left: 10px;
         top: 820px;
     }
+
     .head-card-div {
         position: absolute;
         top: 180px;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .all-other-cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
+
     .footer-height {
         position: absolute;
         top: 3230px;
     }
+
     .all-menu {
         position: absolute;
         top: 650px;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .menu-left {
         position: absolute;
         left: -200px;
     }
+
     .menu-right {
         position: absolute;
         right: 140px;
     }
+
     .menu-cards-wrapper {
         width: 820px;
     }
+
     .footer-nav {
         position: relative;
         right: 70px;
     }
+
     .footer-left {
         gap: 90px;
     }
+
     .footer-right {
         gap: 5px;
     }
+
     .head-p-1-2-n {
         display: none;
     }
+
     .phone {
         font-size: 18px;
     }
+
     .sorting {
         padding-right: 10px;
     }
+
     .hot-dishes-cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -117,94 +166,119 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
     .footer-height-2 {
         position: absolute;
         top: 1200px;
         left: 0;
     }
+
     .img-khinkali {
         position: relative;
         right: 12px;
     }
+
     .mesh-3 {
         position: absolute;
         top: 245px;
         left: -7px;
     }
+
     .forms {
         position: relative;
         left: 30px;
     }
+
     .forms-cards {
         width: 520px;
         padding-right: 10px;
     }
+
     .head-h-2 {
         font-size: 45px;
     }
+
     .footer-height-3 {
         position: absolute;
         top: 1450px;
         left: 0px;
     }
+
     .all-shopping-cart-cards {
         width: 945px;
     }
+
     .card-price-width-2 {
         margin-left: 0px;
     }
+
     .card-price-p-2 {
         padding-left: 0px;
     }
+
     .forms-cards-info-cart {
         padding-left: 30px;
     }
+
     .shopping-cart-cards-p {
         width: 945px;
     }
+
     .shopping-cart-cards-p-1 {
         padding-left: 170px;
     }
+
     .shopping-cart-cards-p-2 {
         padding-left: 140px;
     }
+
     .shopping-cart-cards-p-3 {
         padding-left: 0;
         position: relative;
         right: 15px;
     }
+
     .shopping-cart-cards-p-4 {
         padding-left: 0;
         position: relative;
         right: 45px;
     }
+
     .payment-card {
         position: relative;
         left: 620px;
         top: 850px;
     }
+
     .card-price-p-4 {
         padding-left: 10px;
     }
+
     .content-left-div-points {
         width: 830px;
     }
+
     .contact-us-bg-1 {
         left: 350px;
     }
+
     .contact-us-bg-2 {
         display: none;
     }
+
     .contact-us-send-index {
         display: none;
     }
+
     .footer-nav-2 {
         display: none;
     }
+
     .head-h-1-s {
         font-size: 65px;
         color: white;
     }
+
     .head-h-1 {
         width: 800px;
     }
@@ -218,9 +292,11 @@
     .head-h-1-2 {
         font-size: 25px;
     }
+
     .head-p-1-2-a {
         font-size: 15px;
     }
+
     .contact-us-bg-3 {
         display: none;
     }
@@ -239,68 +315,85 @@
         top: 170px;
         right: 315px;
     }
+
     .head-p-2-3 {
         position: relative;
         bottom: 275px;
         left: 480px;
         width: 250px;
     }
+
     .head-p-3 {
         margin-left: 74px;
     }
+
     .card-1 {
         position: relative;
         top: 70px;
         right: 300px;
     }
+
     .card-2 {
         display: none;
     }
+
     .meshs-2 {
         position: relative;
         right: 570px;
     }
+
     .head-card-div {
         position: absolute;
         top: 400px;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .all-other-cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+
     .all-menu {
         position: absolute;
         top: 1200px;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .footer-height {
         position: absolute;
         top: 3700px;
     }
+
     .menu {
         width: 700px;
     }
+
     .menu-cards-wrapper {
         width: 600px;
     }
+
     .menu-left {
         left: -450px;
     }
+
     .menu-right {
         right: 50px;
     }
+
     .menu-card-3 {
         display: none;
     }
+
     .menu-card-4 {
         display: none;
     }
+
     .menu-card-5 {
         display: none;
     }
+
     .footer-nav {
         display: none;
     }
@@ -312,6 +405,7 @@
     .head-h-1 {
         font-size: 70px;
     }
+
     .hot-dishes-cards {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -320,19 +414,29 @@
 /* хинкали */
 
 @media (max-width: 768px) {
+    .head-h-0-profile-dishes {
+        position: relative;
+        top: -500px;
+    }
+    .footer-height-10 {
+        display: none;
+    }
     .forms {
         position: relative;
         top: 500px;
         left: -650px;
     }
+
     .all-cards-recommendation {
         position: relative;
         top: 650px;
     }
+
     .forms-cards {
         width: 740px;
         padding-right: 30px;
     }
+
     .footer-height-3 {
         position: absolute;
         top: 2000px;
@@ -345,37 +449,47 @@
     .all-shopping-cart-cards {
         width: 720px;
     }
+
     .head-h-1-s {
         color: white;
     }
+
     .shopping-cart-cards-p-1 {
         position: relative;
         left: -30px;
     }
+
     .card-p1-1 {
         width: 200px;
     }
+
     .card-price-p-1 {
         padding-left: 0;
     }
+
     .shopping-cart-cards-p-2 {
         position: relative;
         left: -60px;
     }
+
     .shopping-cart-cards-p {
         width: 700px;
     }
+
     .card-price-width-2 {
         gap: 0;
     }
+
     .shopping-cart-cards-p-3 {
         position: relative;
         left: -40px;
     }
+
     .shopping-cart-cards-p-4 {
         position: relative;
         left: -30px;
     }
+
     .payment-card {
         position: relative;
         left: 380px;
@@ -394,28 +508,88 @@
 /* бронирования стола */
 
 @media (max-width: 768px) {
+    .head-h-1-hot {
+        width: 600px;
+    }
+    .footer-height-4 {
+        top: 100px;
+    }
     .head-p-1-2-a {
         font-size: 12px;
     }
+
     .head-h-1-2-res {
         width: 190px;
     }
+
     .order-res {
         position: relative;
         left: -280px;
         top: 340px;
     }
+
     .footer-height-5 {
         top: 1100px;
+        left: 0;
     }
+
     .res-div {
         position: relative;
         left: 350px;
         top: -331px;
     }
+
     .confirm-order-div {
         position: relative;
         top: -180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-p-1-2-div-in {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .office-input-3-admin {
+        width: 275px;
+    }
+    .footer-height {
+        position: absolute;
+        top: 2400px;
+    }
+    .sorting-b {
+        display: none;
+    }
+    .footer-height-2 {
+        position: absolute;
+        top: 500px;
+    }
+    .head-h-1-12 {
+        gap: 100px;
+    }
+    .all-reservation-flex {
+        gap: 10px;
+    }
+    .order-block-2 {
+        transition: none; /* Отключаем саму плавность анимации */
+    }
+
+    .order-block-2:hover {
+        transform: none; /* Отменяем увеличение блока при касании/наведении */
+    }
+    .confirm-order-div {
+        position: relative;
+        top: 10px;
+    }
+    .footer-height-5 {
+        position: absolute;
+        top: -100px;
+    }
+    .head-h-0-profile-flex {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        gap: 80px;
     }
 }
 
@@ -430,24 +604,50 @@
     .nav-right-res-a {
         display: none;
     }
+
     .card-price-icon-2a {
         display: none;
     }
 }
 
 @media (max-width: 320px) {
+    .all-menu {
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .all-other-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: absolute;
+        top: 1050px;
+        left: 105px;
+    }
+
+    .head-card-div {
+        position: absolute;
+        top: -750px;
+        left: 170px;
+    }
+
     .navbar {
         height: 50px;
     }
+
     .menu-text {
         display: none;
     }
+
     .menu-button {
         margin: 0 10px;
     }
+
     .nav-right-res {
         display: none;
     }
+
     .nav-right-res-a {
         height: 35px;
         width: 270px;
@@ -461,50 +661,53 @@
         margin-top: 10px;
         margin-left: 20px;
     }
+
     .nav-right-res-a:hover {
         border: 1px solid rgb(136, 140, 147);
         color: #888c93;
     }
+
     .nav-right-res-a:active {
         color: white;
         border: 1px solid white;
     }
+
     .head-p-1 {
         font-size: 20px;
     }
+
     .meshs-1 {
         display: none;
     }
+
     .head-p-2-3 {
         display: none;
     }
+
     .img-steak {
         display: none;
     }
+
     .card-1 {
         display: none;
     }
+
     .meshs-2 {
         display: none;
     }
-    .head-card-div {
-        top: -700px;
-    }
+
     .head-p-4 {
         font-size: 35px;
         position: relative;
-        left: 150px;
+        left: 100px;
         width: 240px;
+        height: 300px;
     }
-    .all-other-cards {
-        position: relative;
-        top: 950px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+
     .card-p3-1 {
         display: none;
     }
+
     .card-p1-1 {
         font-size: 13px;
         width: 130px;
@@ -512,69 +715,85 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
     .card-price-p0 {
         width: 130px;
     }
+
     .card-0-1 {
         width: 130px;
     }
+
     .card-2-img {
         width: 130px;
     }
+
     .card-price-p {
         width: 75px;
     }
+
     .card-price-icon-2 {
         display: none;
     }
+
     .card-price-icon-2a {
         height: 37px;
         width: 37px;
-        background-color: rgb(251,209,62);
+        background-color: rgb(251, 209, 62);
         padding-left: 8px;
         padding-top: 6px;
         margin-left: 20px;
     }
+
     .card-price-icon-2a:hover {
         background-color: rgb(219, 179, 37);
     }
+
     .card-price-icon-2a:active {
         background-color: black;
     }
+
     .card-price-icon-2a:active img {
         filter: brightness(0) saturate(100%) invert(81%) sepia(89%) saturate(464%) hue-rotate(359deg) brightness(102%) contrast(102%);
     }
-    .all-menu {
-        top: 100px;
-    }
+
     .menu {
         width: 300px;
     }
+
     .head-p-5 {
         font-size: 40px;
     }
+
     .menu-left {
         position: relative;
         left: -170px;
     }
+
     .menu-right-icon {
         margin: 0 3px;
     }
+
     .menu-right {
         padding-top: 5px;
     }
+
     .menu-cards-wrapper {
         width: 270px;
     }
+
     .menu-card-s {
         width: 120px;
         height: 150px;
     }
-    .footer-height {
-        top: 2500px;
-    }
+
     .head-p-1-2-p {
         font-size: 10px;
+    }
+
+    .footer-height {
+        position: absolute;
+        top: 2500px;
     }
 }
 
@@ -585,18 +804,23 @@
         margin-top: 20px;
         font-size: 30px;
     }
+
     .sorting-p {
         font-size: 10px;
     }
+
     .sorting-a {
         font-size: 10px;
     }
+
     .sorting {
         margin-top: 20px;
     }
+
     .hot-dishes-cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .footer-height-2 {
         top: 1200px;
     }
@@ -608,32 +832,39 @@
     .head-h-1-k {
         font-size: 25px;
     }
+
     .forms {
         top: 250px;
     }
+
     .forms-p {
         position: relative;
         left: 350px;
     }
+
     .forms-cards {
         position: relative;
         left: 350px;
         width: 290px;
     }
+
     .forms-p-3 {
         position: relative;
         left: 350px;
         width: 290px;
     }
+
     .all-cards-recommendation {
         position: relative;
         top: 320px;
     }
+
     .head-h-2 {
         font-size: 25px;
         position: relative;
         left: -30px;
     }
+
     .recommendation-card {
         position: relative;
         left: -28px;
@@ -641,6 +872,7 @@
         grid-template-columns: repeat(2, 150px);
         gap: 5px;
     }
+
     .footer-height-3 {
         top: 1700px;
     }
@@ -653,45 +885,58 @@
         font-size: 35px;
         color: white;
     }
+
     .cart-sum {
         font-size: 20px;
     }
+
     .head-h-sum {
         margin-top: 20px;
     }
+
     .shopping-cart-cards-p {
-        display: none;
+        width: 100px;
     }
+
     .all-shopping-cart-cards {
         width: 300px;
     }
+
     .forms-cards-info-cart-img {
         display: none;
     }
+
     .forms-cards-info-cart {
         padding-left: 5px;
     }
+
     .card-price-p-1 {
         display: none;
     }
+
     .card-price-icon-3 {
         display: none;
     }
+
     .payment-card {
         position: relative;
         top: 450px;
         left: 0;
     }
+
     .card-price-p-4 {
         width: 100px;
     }
+
     .promo-input {
         width: 150px;
     }
+
     .card-price-p-2 {
         font-size: 15px;
         padding-left: 5px;
     }
+
     .footer-height-4 {
         top: 900px;
     }
@@ -703,19 +948,156 @@
     .head-h-0-c {
         margin-top: 20px;
     }
+
     .contact-us-div-p {
         font-size: 11px;
     }
+
     .office-input-2 {
         width: 270px;
     }
+
     .office-input-3 {
         width: 270px;
     }
+
     .footer-height-6 {
         top: 800px;
     }
 }
+
+
+
+
+
+
+
+
+@media (max-width: 320px) {
+    .head-h-0-profile-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .head-h-0-profile-2 {
+        width: 280px;
+        min-width: 0;
+        flex: 0 0 340px;
+    }
+
+    .order-profile {
+        width: 280px;
+    }
+
+    .contact-us-send {
+        margin-top: 30px;
+    }
+
+    .all-contact-us {
+        margin: 0;
+    }
+
+    .footer-height-7 {
+        position: absolute;
+        top: -250px;
+        left: 0;
+    }
+
+    .footer-height-8 {
+        position: absolute;
+        top: -200px;
+        left: 0;
+    }
+
+    .head-h-0 {
+        width: 270px;
+    }
+
+    .sorting-b {
+        display: none;
+    }
+
+    .sorting-p {
+        display: none;
+    }
+
+    .search-box {
+        position: absolute;
+        left: 10px;
+        top: 60px;
+    }
+
+    .hot-dishes-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        gap: 5px;
+    }
+
+    .card-p0 {
+        font-size: 13px;
+    }
+
+    .card-p2 {
+        font-size: 12px;
+    }
+
+    .card-price-p {
+        font-size: 16px;
+    }
+
+    .add-to-cart-btn {
+        width: 130px;
+        font-size: 10px;
+    }
+
+    .hot-dishes-cards {
+        position: absolute;
+        left: 165px;
+        top: 130px;
+    }
+
+    .footer-height-2 {
+        position: absolute;
+        top: 500px;
+    }
+
+    .contact-us-send {
+        position: relative;
+        top: -20px;
+    }
+    
+    .all-shopping-cart-cards-forms-cards {
+        width: 300px;
+    }
+    .all-shopping-cart-cards {
+        position: relative;
+        left: -20px;
+    }
+    .shopping-cart-cards-p {
+        width: 200px;
+    }
+    .shopping-cart-cards-p-1 {
+        padding-right: 60px;
+        position: relative;
+        left: -80px;
+    }
+    .shopping-cart-cards-p-2 {
+        display: none;
+    }
+    .footer-height-4 {
+        position: absolute;
+        top: -100px;
+        left: 0;
+    }
+    .head-h-0-profile-2 {
+        width: 260px;
+        min-width: 0;
+        flex: 0;
+    }
+}
+
 
 /* бронирование стола */
 
@@ -725,6 +1107,11 @@
         text-align: center;
         margin: 0;
     }
+
+    .head-pages-normal {
+        display: none;
+    }
+
     .head-h-1-12 {
         margin-top: 20px;
         display: flex;
@@ -732,34 +1119,47 @@
         align-items: center;
         gap: 15px;
     }
+
+    .head-p-1-2-div-in {
+        display: flex;
+        gap: 20px;
+    }
+
     .head-p-1-2 {
         padding-left: 0;
         border: none;
         text-align: center;
     }
+
     .order-block {
         width: 275px;
     }
+
     .office-input {
         width: 250px;
         margin-left: 10px;
     }
+
     .order-block-button-top {
         width: 250px;
     }
+
     .res-div {
         left: 0;
         top: 0;
     }
+
     .confirm-order-div {
         width: 275px;
         top: 0;
     }
+
     .order-res {
         position: relative;
         left: -375px;
         top: 500px;
     }
+
     .order-block-2 {
         font-size: 15px;
         background-color: rgba(255, 255, 255, 0);
@@ -772,22 +1172,48 @@
         overflow-wrap: break-word;
         max-width: 100%;
         transition: none;
+        position: absolute;
+        left: 30px;
+        top: 580px;
     }
+
     .order-block-2:hover {
         transform: none;
     }
+
     .order-block-span {
         width: 100px;
     }
+
     .office-input-con {
         width: 250px;
         margin-left: 10px;
     }
+
     .office-input-con-g {
         display: flex;
         flex-direction: column;
     }
+
     .footer-height-5 {
-        top: 1400px;
+        position: absolute;
+        top: 300px;
+        left: 0;
+    }
+    .user-uid-admin {
+        display: none;
+    }
+    .office-input-3-admin {
+        width: 250px;
+    } 
+    .footer-height-10 {
+        display: none;
+    }
+    .head-h-0-profile-dishes {
+        position: static; /* Возвращаем элемент в стандартный поток документа */
+        top: auto;        /* Сбрасываем сдвиг в -500px */
+    }
+    .head-h-1-hot {
+        width: 280px;
     }
 }

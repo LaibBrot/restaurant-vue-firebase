@@ -2,7 +2,7 @@
   <main class="container-xxl main-height main-height-min-h">
 
     <div class="head-h-0">
-      <h2 class="head-h-1">Горячие блюда</h2>
+      <h2 class="head-h-1 head-h-1-hot">Горячие блюда</h2>
       <div class="head-pages">
         <router-link class="head-pages-1" to="/">Главная</router-link>
         <p class="head-pages-slash">/</p>
@@ -30,7 +30,6 @@
       </div>
     </div>
 
-    <!-- 🍽️ блюда -->
     <div class="hot-dishes-cards">
       <div
         v-for="dish in filteredDishes"
@@ -39,7 +38,11 @@
       >
         <div class="card-2-img">
 
-          <img :src="dish.image" width="190" />
+          <picture>
+            <source media="(max-width: 320px)" :srcset="dish.image" width="135" />
+            <source media="(min-width: 1025px)" :srcset="dish.image" width="190" />
+            <img :src="dish.image" alt="Блюдо" width="190" />
+          </picture>
 
           <p class="card-p0 card-p1">{{ dish.name }}</p>
           <p class="card-p0 card-p2">{{ dish.weight }}</p>
@@ -69,6 +72,7 @@
 
   </main>
 </template>
+
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'

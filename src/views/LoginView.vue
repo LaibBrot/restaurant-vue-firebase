@@ -20,22 +20,18 @@
         <div class="contact-us">
           <p class="contact-us-div-p">EMAIL:</p>
 
-          <input
-            v-model="email"
-            type="email"
-            class="office-input-3"
-          />
+          <input v-model="email" type="email" class="office-input-3" />
         </div>
 
         <div class="contact-us">
           <p class="contact-us-div-p">ПАРОЛЬ:</p>
 
-          <input
-            v-model="password"
-            type="password"
-            class="office-input-3"
-          />
+          <input v-model="password" type="password" class="office-input-3" />
         </div>
+
+        <router-link to="/register" class="head-pages-1">
+          Нет аккаунта? <u>Регистрация</u>
+        </router-link>
 
         <div class="contact-us-send" @click="login">
           ВОЙТИ
@@ -44,11 +40,7 @@
 
       <!-- Фон -->
       <div class="contact-us-bg-2">
-        <img
-          src="/src/assets/images/contact-us-bg-2.png"
-          alt=""
-          width="500"
-        />
+        <img src="/src/assets/images/contact-us-bg-2.png" alt="" width="500" />
       </div>
     </div>
   </main>

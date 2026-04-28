@@ -6,8 +6,10 @@
       <!-- Заголовок -->
       <div class="head-h-1-12">
         <h2 class="head-h-1-2 head-h-1-2-res">Бронирование стола</h2>
-        <p class="head-p-1-2 head-p-1-2-a">г.Алматы <br>пр.Достык 172</p>
-        <p class="head-p-1-2 head-p-1-2-a">Вс - Чт 12:00 - 01:00<br>Пт - Сб 12:00 - 02:00</p>
+        <div class="head-p-1-2-div-in">
+          <p class="head-p-1-2 head-p-1-2-a">г.Алматы <br>пр.Достык 172</p>
+          <p class="head-p-1-2 head-p-1-2-a">Вс - Чт 12:00 - 01:00<br>Пт - Сб 12:00 - 02:00</p>
+        </div>
         <p class="head-p-1-2 head-p-1-2-a">+7 (778) 841-67-29</p>
       </div>
 
@@ -167,7 +169,6 @@ function selectTable(name) {
   selectedTable.value = name
 }
 
-// ✅ подтверждение
 async function confirmReservation() {
   if (!currentUser.value) {
     alert('Профиль загружается...')
@@ -190,12 +191,9 @@ async function confirmReservation() {
   }
 
   await saveReservation(orderData)
-
   order.value = orderData
-
   alert('Бронь создана!')
 
-  // очистка формы
   date.value = ''
   time.value = ''
   people.value = ''
