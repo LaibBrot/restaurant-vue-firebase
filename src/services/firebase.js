@@ -203,6 +203,8 @@ export async function createOrder() {
   const user = auth.currentUser;
   if (!user) throw new Error("Не авторизован");
 
+  const userProfile = await getProfile(user.uid);
+
   const cartRef = collection(db, "users", user.uid, "cart");
   const snap = await getDocs(cartRef);
 
@@ -213,6 +215,9 @@ export async function createOrder() {
 
   await setDoc(doc(db, "orders", user.uid), {
     userId: user.uid,
+    name: userProfile?.name || "Не указано",
+    email: userProfile?.email || user.email,
+    phone: userProfile?.phone || "Не указан",
     items,
     updatedAt: new Date()
   });
