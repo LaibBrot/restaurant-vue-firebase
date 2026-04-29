@@ -70,7 +70,7 @@
 
       <button
         class="payment-card-end"
-        @click="createOrder"
+        @click="createOrderHandler"
       >
         ОФОРМИТЬ ЗАКАЗ
       </button>

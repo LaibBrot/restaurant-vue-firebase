@@ -158,7 +158,7 @@ function selectTable(name) {
 
 async function confirmReservation() {
   if (!currentUser.value) {
-    alert('Профиль загружается...')
+    alert('Пожалйста, войдите в аккаунт')
     return
   }
 

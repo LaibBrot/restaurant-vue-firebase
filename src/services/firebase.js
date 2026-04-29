@@ -186,23 +186,7 @@ export async function removeFromCart(id) {
 }
 
 
-export async function createOrder() {
-  const user = auth.currentUser;
-  if (!user) throw new Error("Не авторизован");
 
-  const snap = await getDocs(collection(db, "users", user.uid, "cart"));
-
-  const items = snap.docs.map(doc => ({
-    id: doc.id,
-    ...doc.data()
-  }));
-
-  await setDoc(doc(db, "orders", user.uid), {
-    userId: user.uid,
-    items,
-    updatedAt: new Date()
-  });
-}
 
 export async function loadOrders() {
   const user = auth.currentUser;
@@ -215,23 +199,31 @@ export async function loadOrders() {
     .filter(o => o.userId === user.uid);
 }
 
+export async function createOrder() {
+  const user = auth.currentUser;
+  if (!user) throw new Error("Не авторизован");
+
+  const cartRef = collection(db, "users", user.uid, "cart");
+  const snap = await getDocs(cartRef);
+
+  const items = snap.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }));
+
+  await setDoc(doc(db, "orders", user.uid), {
+    userId: user.uid,
+    items,
+    updatedAt: new Date()
+  });
+
+  for (const cartDoc of snap.docs) {
+    await deleteDoc(doc(db, "users", user.uid, "cart", cartDoc.id));
+  }
+}
+
 export async function deleteOrder(orderId) {
   const orderRef = doc(db, "orders", orderId);
-  const snap = await getDoc(orderRef);
-
-  if (!snap.exists()) {
-    throw new Error("Заказ не найден");
-  }
-
-  const data = snap.data();
-  const userId = data.userId;
-
-  const cartSnap = await getDocs(collection(db, "users", userId, "cart"));
-
-  for (const cartDoc of cartSnap.docs) {
-    await deleteDoc(doc(db, "users", userId, "cart", cartDoc.id));
-  }
-
   await deleteDoc(orderRef);
 }
 
@@ -253,11 +245,24 @@ export async function loadAllOrders() {
 
 export async function deleteUser(userId) {
   await deleteDoc(doc(db, "users", userId));
+  
+  await deleteDoc(doc(db, "reservations", userId));
+  await deleteDoc(doc(db, "users", userId, "reservations", "current"));
+  
+  await deleteDoc(doc(db, "orders", userId));
 }
 
+
 export async function updateReservationData(id, table, date, time, people) {
-  const ref = doc(db, "reservations", id);
-  await updateDoc(ref, {
+  await updateDoc(doc(db, "reservations", id), {
+    table: table,
+    date: date,
+    time: time,
+    people: people,
+    updatedAt: new Date()
+  });
+  
+  await updateDoc(doc(db, "users", id, "reservations", "current"), {
     table: table,
     date: date,
     time: time,
@@ -265,6 +270,12 @@ export async function updateReservationData(id, table, date, time, people) {
     updatedAt: new Date()
   });
 }
+
+export async function deleteReservation(reservationId) {
+  await deleteDoc(doc(db, "reservations", reservationId));
+  await deleteDoc(doc(db, "users", reservationId, "reservations", "current"));
+}
+
 
 export async function updateOrderItemQuantity(orderId, itemIndex, newQuantity) {
   const orderRef = doc(db, "orders", orderId);
@@ -292,8 +303,4 @@ export async function deleteOrderItem(orderId, itemIndex) {
     
     await updateDoc(orderRef, { items });
   }
-}
-
-export async function deleteReservation(reservationId) {
-  await deleteDoc(doc(db, "reservations", reservationId));
 }
